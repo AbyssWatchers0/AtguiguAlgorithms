@@ -18,7 +18,7 @@ public class HuffmanCode {
 //                "我找不到你了，空指针了\n" +
 //                "我不愿意如此，在下一轮full gc前\n" +
 //                "我找到了object家的finalize\n" +
-//                "又找到了你，这次我不会放手 hhh";
+//                "又找到了你，这次我不会放手";
 //
 //        byte[] bytes = huffmanZip(content.getBytes());
 //        System.out.println(Arrays.toString(bytes));
