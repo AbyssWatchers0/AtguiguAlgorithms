@@ -30,7 +30,7 @@ public class HuffmanCode {
 //        deZipFile("C:\\Users\\ASUS\\Downloads\\dg.zip", "C:\\Users\\ASUS\\Downloads\\dg.png");
 
         String src = "F:\\DeskTop\\记事本.txt";
-        String desc = "F:\\DeskTop\\记事本.zip";
+        String desc = "";
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
