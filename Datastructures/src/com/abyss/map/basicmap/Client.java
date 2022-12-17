@@ -20,5 +20,7 @@ public class Client {
         basicMap.addEdge(1, 4, 1);
 
         basicMap.showMatrix();
+
+        basicMap.dfs(0);
     }
 }
