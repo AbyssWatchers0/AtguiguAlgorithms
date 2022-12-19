@@ -4,6 +4,7 @@ import sun.security.provider.certpath.Vertex;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 /**
  * @author Abyss Watchers
@@ -40,6 +41,13 @@ public class BasicMap {
     }
 
     /**
+     * 深度优先遍历
+     */
+    public void dfs() {
+        dfs(0);
+        this.isVisited = new boolean[vertexList.size()];
+    }
+    /**
      * 深度遍历
      *
      * @param v 深度遍历起始节点
@@ -62,6 +70,49 @@ public class BasicMap {
                 dfs(neighbor);
             }
         }
+    }
+
+    /**
+     * 广度优先
+     */
+    public void bfs() {
+        if (vertexList.size() <= 0) {
+            return;
+        }
+        // 当前节点下标
+        int cur = 0;
+        // 当前节点的邻接节点下标
+        int neighbor;
+        // 记录访问节点顺序的队列
+        LinkedList<Integer> queue = new LinkedList<>();
+        // 访问第一个节点
+        System.out.println(vertexList.get(cur));
+        // 标记为已访问
+        isVisited[cur] = true;
+        // 记录到队列
+        queue.addLast(cur);
+
+        while (!queue.isEmpty()) {
+            // 取出当前队列记录的第一条数据作为当前节点
+            cur = queue.removeFirst();
+            // 获取当前节点的第一个邻接节点
+            neighbor = getNeighbor(cur, -1);
+            while (neighbor != -1) {
+                if (!isVisited[neighbor]) {
+                    // 如果有未访问过的邻接节点
+                    // 访问节点
+                    System.out.println(vertexList.get(neighbor));
+                    // 标记为已访问
+                    isVisited[neighbor] = true;
+                    // 记录到队列
+                    queue.addLast(neighbor);
+                }
+                // 找下一个邻接节点
+                neighbor = getNeighbor(cur, neighbor);
+            }
+        }
+
+        isVisited = new boolean[vertexList.size()];
     }
 
     public void insertVertex(String data) {

@@ -21,6 +21,7 @@ public class Client {
 
         basicMap.showMatrix();
 
-        basicMap.dfs(0);
+//        basicMap.dfs();
+        basicMap.bfs();
     }
 }
